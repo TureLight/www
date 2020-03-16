@@ -1,0 +1,175 @@
+{% load static %}
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-light-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{% url 'home' %}" class="brand-link">
+        <img src="{% static 'dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">测试管理平台</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar layout-boxed">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-2 pb-2 mb-2 d-flex">
+            <div class="image">
+                <img src="{% static 'dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a id="menu1" onclick="click1()" href="{% url 'home' %}" class="nav-link {{ action.0 }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            综合数据
+                            <span class="right badge badge-danger">New</span>
+                        </p>
+                    </a>
+                </li>
+
+                <li id="menu2" class="nav-item has-treeview {{ action.1 }}">
+                    <a id="menu2-1" href="#" onclick="click2()" class="nav-link {{ action.2 }}">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            工作日报管理
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul id="menu2-2" class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'today_work' %}" class="nav-link {{ action.3 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>今日报告</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'check_work' %}" class="nav-link {{ action.4 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>历史报告</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link {{ action.5 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>预留位置</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li id="menu3" class="nav-item has-treeview {{ action.6 }}">
+                    <a id="menu3-1" onclick="click3()" href="#" class="nav-link {{ action.7 }}">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            测试案例管理
+                            <i class="fas fa-angle-left right"></i>
+
+                        </p>
+                    </a>
+                    <ul id="menu3-2" class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.8 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>流程接口案例</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.9 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>单一接口案例</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.10 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>页面测试案例</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.11 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>性能测试案例</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.12 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>定制脚本案例</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="menu4" class="nav-item has-treeview {{ action.13 }}">
+                    <a id="menu4-1" onclick="click4()" href="#" class="nav-link {{ action.14 }}">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            任务运行状态管理
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul id="menu4-2" class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.15 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>接口测试</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.16 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>页面测试</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.17 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>性能测试</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="menu5" class="nav-item has-treeview {{ action.18 }}">
+                    <a id="menu5-1" onclick="click5()" href="#" class="nav-link {{ action.19 }}">
+                        <i class="nav-icon fas fa-tree"></i>
+                        <p>
+                            测试结果管理
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul id="menu5-2" class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.20 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>接口测试</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.21 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>页面测试</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link {{ action.22 }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>性能测试</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+
+</aside>
