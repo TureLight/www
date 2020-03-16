@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-# from www.settings import MEDIA_ROOT, STATIC_ROOT
+from www.settings import MEDIA_ROOT, STATIC_ROOT
 from django.views.static import serve
 from main_app.main_app_views import view_page
 
 urlpatterns = [
     path('after_admin_for_myself/', admin.site.urls),
-    # re_path('media/(?P<path>.)', serve, {"document_root": MEDIA_ROOT}),
-    # re_path('static/(?P<path>.)', serve, {"document_root": STATIC_ROOT}),
+    re_path('media/(?P<path>.)', serve, {"document_root": MEDIA_ROOT}),
+    re_path('static/(?P<path>.)', serve, {"document_root": STATIC_ROOT}),
     path('', view_page),
 ]

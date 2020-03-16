@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0dw5t23^u$^#sdb_g6k2b)p9h8y_4iyt$#-kibx_b8ui3zhghl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -84,9 +84,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'www',
         'USER': 'www',
-        'PASSWORD': 'eALYEerfZkeZfSiF',
+        'PASSWORD': '123456',
         'PORT': 3306,
-        'HOST': '192.144.228.95',
+        'HOST': '127.0.0.1',
     }
 }
 
@@ -120,17 +120,17 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
-                    os.path.join(BASE_DIR),
-                   ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
+#                     os.path.join(BASE_DIR),
+#                    ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 设置文件上传路径
 MEDIA_URL = '/media/'
